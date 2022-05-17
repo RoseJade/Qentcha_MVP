@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QentchaMVP">
         <activity
+            android:name=".Profil"
+            android:exported="false" />
+        <activity
+            android:name=".MonCarnet"
+            android:exported="false" />
+        <activity
+            android:name=".AjoutCarnet"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

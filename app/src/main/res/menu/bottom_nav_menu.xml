@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_carte"
+        android:icon="@drawable/ic_carte"
+        android:title="@string/bottom_nav_menu_carte" />
+
+    <item
+        android:id="@+id/action_ajoutcarnet"
+        android:icon="@drawable/ic_ajoutcarnet"
+        android:title="@string/bottom_nav_menu_ajoutcarnet" />
+
+    <item
+        android:id="@+id/action_moncarnet"
+        android:icon="@drawable/ic_moncarnet"
+        android:title="@string/bottom_nav_menu_moncarnet" />
+
+    <item
+        android:id="@+id/action_profil"
+        android:icon="@drawable/ic_profil"
+        android:title="@string/bottom_nav_menu_profil" />
+</menu>

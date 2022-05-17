@@ -6,23 +6,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Switch;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MainActivity extends AppCompatActivity {
+public class Profil extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profil);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
 
         // Set carte selected
-        bottomNavigationView.setSelectedItemId(R.id.action_carte);
+        bottomNavigationView.setSelectedItemId(R.id.action_profil);
 
         // Perform ItemSelectedListener
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -30,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch ( menuItem.getItemId()) {
                     case R.id.action_carte:
+                        startActivity( new Intent( getApplicationContext()
+                                ,MainActivity.class) );
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.action_ajoutcarnet:
@@ -45,9 +47,6 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.action_profil:
-                        startActivity( new Intent( getApplicationContext()
-                                ,Profil.class) );
-                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
@@ -55,4 +54,3 @@ public class MainActivity extends AppCompatActivity {
         } );
     }
 }
-

@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/drawable-anydpi/ic_ajoutcarnet.xml" value="0.267" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/drawable-anydpi/ic_carte.xml" value="0.267" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/drawable-anydpi/ic_moncarnet.xml" value="0.267" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/drawable-anydpi/ic_profil.xml" value="0.267" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/drawable/bottom_nav_colors.xml" value="0.267" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/layout/activity_ajout_carnet.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/layout/activity_carte.xml" value="0.3484375" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/layout/activity_mon_carnet.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/layout/activity_profil.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18541666666666667" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
