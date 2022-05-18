@@ -6,4 +6,5 @@
     <string name="bottom_nav_menu_ajoutcarnet">Ajouter au carnet</string>
     <string name="bottom_nav_menu_moncarnet">Mon carnet</string>
     <string name="bottom_nav_menu_profil">Profil</string>
+    <string name="mon_carnet">Mon Carnet</string>
 </resources>

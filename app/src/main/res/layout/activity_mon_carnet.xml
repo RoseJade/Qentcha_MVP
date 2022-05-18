@@ -6,13 +6,276 @@
     android:layout_height="match_parent"
     tools:context=".MonCarnet">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/mon_carnet"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1010"
+            android:layout_margin="3dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Centre Historique de la Paz"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
+                android:layout_margin="5dp"
+
+                android:drawableLeft="@android:drawable/ic_menu_more"
+                android:drawablePadding="1dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Effectué le 20 septembre 2019"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_margin="1dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:drawableLeft="@android:drawable/ic_menu_edit"
+                    android:drawablePadding="1dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Modifier"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@android:drawable/ic_menu_share"
+                    android:drawablePadding="1dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Partager"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1010"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Randonnée dans l'Altiplano"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
+                android:layout_margin="5dp"
+
+                android:drawableLeft="@android:drawable/ic_menu_more"
+                android:drawablePadding="1dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Effectué le 24 septembre 2019"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_margin="1dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:drawableLeft="@android:drawable/ic_menu_edit"
+                    android:drawablePadding="1dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Modifier"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@android:drawable/ic_menu_share"
+                    android:drawablePadding="1dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Partager"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1010"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Centre ancien de Phnom Penh"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Effectué le 18 mars 2021"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_margin="1dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:drawableLeft="@android:drawable/ic_menu_edit"
+                    android:drawablePadding="1dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Modifier"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@android:drawable/ic_menu_share"
+                    android:drawablePadding="1dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Partager"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1010"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Centre ancien de Phnom Penh"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/teal_700"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Effectué le 18 mars 2021"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_margin="1dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:drawableLeft="@android:drawable/ic_menu_edit"
+                    android:drawablePadding="1dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Modifier"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@android:drawable/ic_menu_share"
+                    android:drawablePadding="1dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Partager"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mon carnet"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true" />
+        android:layout_above="@+id/bottom_navigation_view"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/white"
+        android:drawableTop="@drawable/ic_carte"
+        android:drawablePadding="6dp"
+        android:text="Carte"
+        android:textColor="@color/black" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
