@@ -9,10 +9,83 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profil"
+        android:layout_centerInParent="true"
         android:textSize="50sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profil"
+        android:textColor="@color/blue"
+        android:layout_marginHorizontal="20dp"
+        android:textSize="40sp"
         android:textStyle="bold"
-        android:layout_centerInParent="true" />
+        android:id="@+id/profil" />
+
+
+    <TextView
+        android:id="@+id/nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profil"
+        android:layout_marginTop="36dp"
+        android:text="Nom :"
+        android:layout_marginHorizontal="5dp"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Saisir nom d'utilisateur"
+        android:layout_below="@id/nom"
+        android:id="@+id/txtNom"
+        />
+
+    <TextView
+        android:id="@+id/adresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtNom"
+        android:layout_marginTop="20dp"
+        android:text="Adresse courriel :"
+        android:layout_marginHorizontal="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Saisir adresse courriel"
+        android:layout_below="@id/adresse"
+        android:id="@+id/txtAdr"
+        />
+
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtAdr"
+        android:layout_marginTop="20dp"
+        android:text="Biographie :"
+        android:layout_marginHorizontal="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bio"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:scrollHorizontally="false"
+        android:id="@+id/txtBio" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
