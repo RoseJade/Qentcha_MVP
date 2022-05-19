@@ -8,15 +8,22 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Switch;
 
+import androidx.fragment.app.FragmentManager;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MapAccueil carte;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        this.carte = (MapAccueil) fragmentManager.findFragmentById(R.id.mapHome);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
