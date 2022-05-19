@@ -32,6 +32,7 @@
         android:layout_above="@+id/bottom_navigation_view">
 
         <Button
+            android:id="@+id/btnAjoutPoint"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Ajouter un point d'interêt"
@@ -43,6 +44,7 @@
             android:backgroundTint="@color/blue"/>
 
         <Button
+            android:id="@+id/btnPrevi"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Prévisualiser"
@@ -52,7 +54,6 @@
             android:drawableLeft="@android:drawable/ic_media_play"
             android:drawablePadding="3dp"
             android:backgroundTint="@color/red"/>
-
 
     </LinearLayout>
 

@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -16,6 +18,19 @@ public class AjoutCarnet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout_carnet);
+
+        //bouton ajout point
+        Button btnAjoutPoint = findViewById(R.id.btnAjoutPoint);
+        btnAjoutPoint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenNewActivity();
+            }
+        });
+
+        // bouton previsualiser
+        Button btnPrevi = findViewById(R.id.btnPrevi);
+        btnPrevi.setOnClickListener((View.OnClickListener) btnPrevi);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
@@ -52,5 +67,10 @@ public class AjoutCarnet extends AppCompatActivity {
                 return false;
             }
         } );
+    }
+
+    public void OpenNewActivity() {
+        Intent intent = new Intent(this, AjoutPoint.class);
+        startActivity(intent);
     }
 }
