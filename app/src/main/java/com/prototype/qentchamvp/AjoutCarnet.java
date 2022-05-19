@@ -19,19 +19,6 @@ public class AjoutCarnet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout_carnet);
 
-        //bouton ajout point
-        Button btnAjoutPoint = findViewById(R.id.btnAjoutPoint);
-        btnAjoutPoint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenNewActivity();
-            }
-        });
-
-        // bouton previsualiser
-        Button btnPrevi = findViewById(R.id.btnPrevi);
-        btnPrevi.setOnClickListener((View.OnClickListener) btnPrevi);
-
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
 
@@ -69,8 +56,13 @@ public class AjoutCarnet extends AppCompatActivity {
         } );
     }
 
-    public void OpenNewActivity() {
+    public void ouvrirAjoutPoint( View v ) {
         Intent intent = new Intent(this, AjoutPoint.class);
+        startActivity(intent);
+    }
+
+    public void ouvrirPreviewTrajet( View v ) {
+        Intent intent = new Intent(this, PreviewTrajet.class);
         startActivity(intent);
     }
 }
