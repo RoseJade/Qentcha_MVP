@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MonCarnet">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -77,9 +81,10 @@
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:map="http://schemas.android.com/apk/res-auto"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:name="com.prototype.qentchamvp.MapCarnet"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"/>
+                android:layout_height="130dp"
+                android:id="@+id/map1"/>
 
 
         </LinearLayout>
@@ -139,8 +144,8 @@
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:map="http://schemas.android.com/apk/res-auto"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:id="@+id/map"
+                android:name="com.prototype.qentchamvp.MapCarnet"
+                android:id="@+id/map2"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"/>
 
@@ -198,8 +203,8 @@
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:map="http://schemas.android.com/apk/res-auto"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:id="@+id/map"
+                android:name="com.prototype.qentchamvp.MapCarnet"
+                android:id="@+id/map3"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"/>
 
@@ -257,14 +262,16 @@
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:map="http://schemas.android.com/apk/res-auto"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:id="@+id/map"
+                android:name="com.prototype.qentchamvp.MapCarnet"
+                android:id="@+id/map4"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"/>
 
         </LinearLayout>
 
     </LinearLayout>
+
+    </ScrollView>
 
     <Button
         android:layout_width="wrap_content"
@@ -288,5 +295,4 @@
         app:itemIconTint="@drawable/bottom_nav_colors"
         app:itemTextColor="@drawable/bottom_nav_colors"
         app:menu="@menu/bottom_nav_menu" />
-
 </RelativeLayout>

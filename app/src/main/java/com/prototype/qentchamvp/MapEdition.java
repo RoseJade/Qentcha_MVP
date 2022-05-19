@@ -14,11 +14,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapAccueil extends SupportMapFragment implements OnMapReadyCallback
+public class MapEdition extends SupportMapFragment implements OnMapReadyCallback
 {
     private GoogleMap googleMap;
 
-    public MapAccueil()  {
+    public MapEdition()  {
         getMapAsync(this);
     }
 

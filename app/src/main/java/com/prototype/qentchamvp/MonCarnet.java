@@ -2,6 +2,7 @@ package com.prototype.qentchamvp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,5 +53,20 @@ public class MonCarnet extends AppCompatActivity {
                 return false;
             }
         } );
+
+        // Ajout des cartes
+
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        MapCarnet m1 = (MapCarnet) fragmentManager.findFragmentById(R.id.map1);
+        m1.set("Centre Ancien de La Paz",-16.5,-68.15);
+
+        MapCarnet m2 = (MapCarnet) fragmentManager.findFragmentById(R.id.map2);
+        m2.set("Randonnée dans l'Altiplano",-16.00358,-69.65332);
+
+        MapCarnet m3 = (MapCarnet) fragmentManager.findFragmentById(R.id.map3);
+        m3.set("Centre ancien de Phnom Penh",11.5448729,104.8921668);
+
+        MapCarnet m4 = (MapCarnet) fragmentManager.findFragmentById(R.id.map4);
+        m4.set("Centre ancien de Phnom Penh",11.5448729,104.8921668);
     }
 }

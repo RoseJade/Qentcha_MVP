@@ -18,6 +18,7 @@
         <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18541666666666667" />
         <entry key="app/src/main/res/drawable-anydpi/ic_carte.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable-anydpi/ic_moncarnet.xml" value="0.1565" />
+        <entry key="app/src/main/res/layout/activity_ajout_carnet.xml" value="0.11955420466058764" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/activity_mon_carnet.xml" value="0.1897644927536232" />
         <entry key="app/src/main/res/layout/activity_profil.xml" value="0.2246376811594203" />
