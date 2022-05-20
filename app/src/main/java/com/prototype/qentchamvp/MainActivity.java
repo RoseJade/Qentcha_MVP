@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-
     }
 
     // Ajout de la surcouche localisation à la carte

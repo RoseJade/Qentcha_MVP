@@ -2,23 +2,43 @@ package com.prototype.qentchamvp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Switch;
 
+// Google Maps
+import androidx.fragment.app.FragmentManager;
+
+// Services de localisation
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.content.Context;
+
+import com.google.android.gms.location.LocationListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MonCarnet extends AppCompatActivity {
+public class CarteCarnet extends AppCompatActivity implements LocationListener {
+
+    private MapAccueil carte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mon_carnet);
+        setContentView(R.layout.activity_carte_carnet);
 
+        // ===> Carte <===
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        this.carte = (MapAccueil) fragmentManager.findFragmentById(R.id.mapHome);
+
+        // ===> Localisation <===
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+
+        // ===> Barre de Navigation <===
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
 
@@ -54,25 +74,9 @@ public class MonCarnet extends AppCompatActivity {
                 return false;
             }
         } );
-
-        // Ajout des cartes
-
-        FragmentManager fragmentManager = this.getSupportFragmentManager();
-        MapCarnet m1 = (MapCarnet) fragmentManager.findFragmentById(R.id.map1);
-        m1.set("Centre Ancien de La Paz",-16.5,-68.15);
-
-        MapCarnet m2 = (MapCarnet) fragmentManager.findFragmentById(R.id.map2);
-        m2.set("Randonnée dans l'Altiplano",-16.00358,-69.65332);
-
-        MapCarnet m3 = (MapCarnet) fragmentManager.findFragmentById(R.id.map3);
-        m3.set("Centre ancien de Phnom Penh",11.5448729,104.8921668);
-
-        MapCarnet m4 = (MapCarnet) fragmentManager.findFragmentById(R.id.map4);
-        m4.set("Centre ancien de Phnom Penh",11.5448729,104.8921668);
     }
 
-    public void ouvrirCarteCarnet( View v ) {
-        Intent intent = new Intent(this, CarteCarnet.class);
-        startActivity(intent);
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
     }
 }
