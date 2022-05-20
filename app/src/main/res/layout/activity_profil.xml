@@ -87,6 +87,87 @@
         android:scrollHorizontally="false"
         android:id="@+id/txtBio" />
 
+    <!-- Photo de Profil -->
+
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/txtBio"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/btnSelectPhoto"
+        android:src="@drawable/ic_profil" />
+
+    <Button
+        android:id="@+id/btnSelectPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtBio"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/blue"
+        android:drawableLeft="@android:drawable/ic_menu_gallery"
+        android:text="Choisir une photo"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSelectPhoto"
+        android:layout_marginTop="30dp"
+        android:clipToOutline="true"
+        android:orientation="horizontal"
+        app:flexWrap="wrap">
+
+        <Button
+            android:id="@+id/btnBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="5dp"
+            android:text="Bar"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnRest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="5dp"
+            android:text="Restaurant"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnCult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="5dp"
+            android:text="Culture"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnUnes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="5dp"
+            android:text="Unesco"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnAty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:checked="false"
+            android:padding="5dp"
+            android:text="Atypique"
+            android:textAllCaps="false" />
+    </com.google.android.flexbox.FlexboxLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
@@ -98,5 +179,6 @@
         app:itemIconTint="@drawable/bottom_nav_colors"
         app:itemTextColor="@drawable/bottom_nav_colors"
         app:menu="@menu/bottom_nav_menu" />
+
 
 </RelativeLayout>
