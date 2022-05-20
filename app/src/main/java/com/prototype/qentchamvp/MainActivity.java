@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
 
 // Google Maps
@@ -15,10 +17,15 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 
+
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationClickListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
 
 // Services de localisation
 import android.location.*;
@@ -26,9 +33,10 @@ import android.location.Location;
 import android.os.Bundle;
 import android.content.Context;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.maps.SupportMapFragment;
+// Barre de Navigation
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -37,12 +45,15 @@ public class MainActivity extends AppCompatActivity
         OnMyLocationButtonClickListener,
         OnMyLocationClickListener,
         OnMapReadyCallback,
+        View.OnClickListener,
         ActivityCompat.OnRequestPermissionsResultCallback {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     private MapAccueil carte;
     private GoogleMap map;
+    private FusedLocationProviderClient fusedLocationClient;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +73,11 @@ public class MainActivity extends AppCompatActivity
         // ===> Localisation <===
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        // ===> Bouton vue globe <===
+
+        findViewById(R.id.btnGlobe).setOnClickListener(this);
 
         // ===> Barre de Navigation <===
 
@@ -125,6 +141,9 @@ public class MainActivity extends AppCompatActivity
             return;
         }
         this.map.setMyLocationEnabled(true);
+        //Location loc = fusedLocationClient.getLastLocation().getResult();
+
+        //map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(loc.getLatitude(), loc.getLongitude()), 10));
     }
 
     @Override
@@ -136,5 +155,15 @@ public class MainActivity extends AppCompatActivity
     public void onMyLocationClick(@NonNull Location location) {
 
     }
+
+    public void onClick(View view)
+    {
+        if (view.getId() == R.id.btnGlobe)
+        {
+            this.map.animateCamera(CameraUpdateFactory.zoomTo(1));
+        }
+    }
+
+
 }
 
