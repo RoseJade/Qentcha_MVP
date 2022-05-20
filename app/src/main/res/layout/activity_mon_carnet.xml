@@ -146,12 +146,11 @@
 
             </LinearLayout>
 
-            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:map="http://schemas.android.com/apk/res-auto"
-                android:name="com.prototype.qentchamvp.MapCarnet"
+            <fragment
                 android:id="@+id/map2"
+                android:name="com.prototype.qentchamvp.MapCarnet"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"/>
+                android:layout_height="130dp" />
 
         </LinearLayout>
 
@@ -285,7 +284,6 @@
     </ScrollView>
 
     <Button
-        android:onClick="ouvrirCarteCarnet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/bottom_navigation_view"
@@ -293,6 +291,7 @@
         android:backgroundTint="@color/white"
         android:drawableTop="@drawable/ic_carte"
         android:drawablePadding="6dp"
+        android:onClick="ouvrirCarteCarnet"
         android:text="Carte"
         android:textColor="@color/black" />
 

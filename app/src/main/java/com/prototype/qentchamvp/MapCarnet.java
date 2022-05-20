@@ -54,8 +54,6 @@ public class MapCarnet extends SupportMapFragment implements OnMapReadyCallback
 
         this.googleMap.animateCamera(CameraUpdateFactory.zoomTo(5));
 
-
-
     }
 
 }
