@@ -25,7 +25,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnVueGlobe"
+        android:layout_margin="4dp"
+        android:drawableTop="@android:drawable/ic_menu_compass"
+        android:text="Vue Globe"
+        android:backgroundTint="@color/blue"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/barreMenu"/>
+
     <LinearLayout
+        android:id="@+id/barreMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -33,7 +45,7 @@
         android:layout_above="@+id/bottom_navigation_view">
 
         <Button
-            android:onClick="ouvrirAjoutPoint"
+            android:id="@+id/btnAjoutPoint"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Ajouter un point d'interêt"
@@ -45,7 +57,7 @@
             android:backgroundTint="@color/blue"/>
 
         <Button
-            android:onClick="ouvrirPreviewTrajet"
+            android:id="@+id/btnPrevue"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Prévisualiser"
