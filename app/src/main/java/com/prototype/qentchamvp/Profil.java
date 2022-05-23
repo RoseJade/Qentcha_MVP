@@ -38,7 +38,7 @@ public class Profil extends AppCompatActivity {
                 choisirImage();
             }
         });
-
+        
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);

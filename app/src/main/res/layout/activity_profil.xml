@@ -141,104 +141,110 @@
                 android:orientation="horizontal"
                 app:flexWrap="wrap">
 
-                <Button
-                    android:id="@+id/btnBar"
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="5dp"
-                    android:text="Bar"
-                    android:textAllCaps="false" />
-
-                <Button
-                    android:id="@+id/btnRest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="5dp"
                     android:text="Restaurant"
-                    android:textAllCaps="false" />
+                    android:checkable="true" />
 
-                <Button
-                    android:id="@+id/btnCult"
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="5dp"
-                    android:text="Culture"
-                    android:textAllCaps="false" />
+                    android:text="Bar"
+                    android:checkable="true" />
 
-                <Button
-                    android:id="@+id/btnUnes"
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="5dp"
                     android:text="Unesco"
-                    android:textAllCaps="false" />
+                    android:checkable="true" />
 
-                <Button
-                    android:id="@+id/btnAty"
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_row="0"
-                    android:layout_column="4"
-                    android:checked="false"
-                    android:padding="5dp"
-                    android:text="Atypique"
-                    android:textAllCaps="false" />
+                    android:text="Espaces verts"
+                    android:checkable="true" />
 
-                <Button
-                    android:id="@+id/btnEsp"
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_row="0"
-                    android:layout_column="4"
-                    android:checked="false"
-                    android:padding="5dp"
-                    android:text="Espaces Verts"
-                    android:textAllCaps="false" />
+                    android:text="Voyage"
+                    android:checkable="true" />
 
-                <Button
-                    android:id="@+id/btnCult"
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="5dp"
+                    android:text="Fast food"
+                    android:checkable="true" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Culture"
-                    android:textAllCaps="false" />
+                    android:checkable="true" />
 
-                <Button
-                    android:id="@+id/btnUnes"
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="5dp"
-                    android:text="Unesco"
-                    android:textAllCaps="false" />
-
-                <Button
-                    android:id="@+id/btnAty"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_row="0"
-                    android:layout_column="4"
-                    android:checked="false"
-                    android:padding="5dp"
                     android:text="Atypique"
-                    android:textAllCaps="false" />
+                    android:checkable="true" />
 
-                <Button
-                    android:id="@+id/btnEsp"
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_row="0"
-                    android:layout_column="4"
-                    android:checked="false"
-                    android:padding="5dp"
-                    android:text="Espaces Verts"
-                    android:textAllCaps="false" />
+                    android:text="Ludique"
+                    android:checkable="true" />
 
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bio"
+                    android:checkable="true" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PMR"
+                    android:checkable="true" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gastronomie"
+                    android:checkable="true" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Activités sportives"
+                    android:checkable="true" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voyages"
+                    android:checkable="true" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monuments"
+                    android:checkable="true" />
 
             </com.google.android.flexbox.FlexboxLayout>
 
