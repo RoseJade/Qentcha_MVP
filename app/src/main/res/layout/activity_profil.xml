@@ -8,20 +8,10 @@
         android:layout_height="match_parent"
         tools:context=".Profil">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_view"
-        app:labelVisibilityMode="labeled"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:itemBackground="@color/blue"
-        app:itemIconTint="@drawable/bottom_nav_colors"
-        app:itemTextColor="@drawable/bottom_nav_colors"
-        app:menu="@menu/bottom_nav_menu" />
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_navigation_view">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -132,11 +122,22 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
-            <com.google.android.flexbox.FlexboxLayout
+            <TextView
+                android:id="@+id/CtInteret"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnSelectPhoto"
-                android:layout_marginTop="50dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="36dp"
+                android:text="Selectionnez des catégories vous correspondant :"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CtInteret"
+                android:layout_marginTop="10dp"
                 android:clipToOutline="true"
                 android:orientation="horizontal"
                 app:flexWrap="wrap">
@@ -145,111 +146,129 @@
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Restaurant"
+                    android:text="@string/noms_tag_restaurant"
+                    app:chipBackgroundColor="@drawable/tag_colors"
+                    android:checkable="true" />
+
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/noms_tag_bar"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bar"
+                    android:text="@string/noms_tag_unesco"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Unesco"
+                    android:text="@string/noms_tag_espacesverts"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Espaces verts"
+                    android:text="@string/noms_tag_voyage"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Voyage"
+                    android:text="@string/noms_tag_fastfood"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fast food"
+                    android:text="@string/noms_tag_culture"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Culture"
+                    android:text="@string/noms_tag_atypique"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Atypique"
+                    android:text="@string/noms_tag_ludique"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ludique"
+                    android:text="@string/noms_tag_bio"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bio"
+                    android:text="@string/noms_tag_pmr"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PMR"
+                    android:text="@string/noms_tag_gastronomie"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gastronomie"
+                    android:text="@string/noms_tag_actsportives"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Activités sportives"
-                    android:checkable="true" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.MaterialComponents.Chip.Action"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Voyages"
-                    android:checkable="true" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.MaterialComponents.Chip.Action"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Monuments"
+                    android:text="@string/noms_tag_monuments"
+                    app:chipBackgroundColor="@drawable/tag_colors"
                     android:checkable="true" />
 
             </com.google.android.flexbox.FlexboxLayout>
 
         </RelativeLayout>
-
     </ScrollView>
 
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        app:labelVisibilityMode="labeled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/blue"
+        app:itemIconTint="@drawable/bottom_nav_colors"
+        app:itemTextColor="@drawable/bottom_nav_colors"
+        app:menu="@menu/bottom_nav_menu" />
 </RelativeLayout>

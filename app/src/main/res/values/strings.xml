@@ -7,4 +7,21 @@
     <string name="bottom_nav_menu_moncarnet">Mon carnet</string>
     <string name="bottom_nav_menu_profil">Profil</string>
     <string name="mon_carnet">Mon Carnet</string>
+
+    <!-- Activity Profil - nom des tags -->
+    <string name="noms_tag_profil">Profil</string>
+    <string name="noms_tag_restaurant">Restaurant</string>
+    <string name="noms_tag_bar">Bar</string>
+    <string name="noms_tag_unesco">Unesco</string>
+    <string name="noms_tag_espacesverts">Espaces verts</string>
+    <string name="noms_tag_voyage">Voyage</string>
+    <string name="noms_tag_fastfood">Fast food</string>
+    <string name="noms_tag_culture">Culture</string>
+    <string name="noms_tag_atypique">Atypique</string>
+    <string name="noms_tag_ludique">Ludique</string>
+    <string name="noms_tag_bio">Bio</string>
+    <string name="noms_tag_pmr">PMR</string>
+    <string name="noms_tag_gastronomie">Gastronomie</string>
+    <string name="noms_tag_actsportives">Activités sportives</string>
+    <string name="noms_tag_monuments">Monuments</string>
 </resources>
