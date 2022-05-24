@@ -8,7 +8,9 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 
 // Google Maps
@@ -85,8 +87,7 @@ public class AjoutCarnet extends AppCompatActivity
         // ===> Ecouteurs pour les boutons <===
 
         findViewById(R.id.btnVueGlobe).setOnClickListener(this);
-        findViewById(R.id.btnAjoutPoint).setOnClickListener(this);
-        findViewById(R.id.btnPrevue).setOnClickListener(this);
+        findViewById(R.id.btnDebut)   .setOnClickListener(this);
 
         // Set carte selected
         bottomNavigationView.setSelectedItemId(R.id.action_ajoutcarnet);
@@ -126,6 +127,39 @@ public class AjoutCarnet extends AppCompatActivity
     public void onClick(View view) {
         if (view.getId() == R.id.btnVueGlobe) {
             this.map.animateCamera(CameraUpdateFactory.zoomTo(1));
+        }
+
+        if (view.getId() == R.id.btnDebut){
+            Button bouPoint = new Button(this);
+            Button bouTexte = new Button(this);
+            Button bouImage = new Button(this);
+            Button bouPre   = new Button(this);
+
+            Button bouStart = (Button) findViewById(R.id.btnDebut);
+
+
+            bouPoint.setText("Point");
+            bouTexte.setText("Texte");
+            bouImage.setText("Image");
+            bouPre  .setText("Prévisualiser");
+
+            bouPoint.setId(R.id.btnAjoutPoint);
+            bouTexte.setId(R.id.btnAjoutTexte);
+            bouImage.setId(R.id.btnAjoutImage);
+            bouPre  .setId(R.id.btnPrevue);
+
+            LinearLayout bar = (LinearLayout) findViewById(R.id.barreAction);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+            bar.removeView(bouStart);
+            bar.addView(bouPoint, lp);
+            bar.addView(bouTexte, lp);
+            bar.addView(bouImage, lp);
+            bar.addView(bouPre  , lp);
+
+            findViewById(R.id.btnAjoutPoint).setOnClickListener(this);
+            findViewById(R.id.btnPrevue).setOnClickListener(this);
+
         }
 
         if (view.getId() == R.id.btnAjoutPoint) {

@@ -34,10 +34,10 @@
         android:text="Vue Globe"
         android:backgroundTint="@color/blue"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/barreMenu"/>
+        android:layout_above="@+id/barreAction"/>
 
     <LinearLayout
-        android:id="@+id/barreMenu"
+        android:id="@+id/barreAction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -45,28 +45,16 @@
         android:layout_above="@+id/bottom_navigation_view">
 
         <Button
-            android:id="@+id/btnAjoutPoint"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Ajouter un point d'interêt"
-            android:textSize="10dp"
-            android:layout_marginVertical="2dp"
-            android:layout_marginHorizontal="5dp"
-            android:drawableLeft="@drawable/ic_ajoutcarnet"
-            android:drawablePadding="3dp"
-            android:backgroundTint="@color/blue"/>
-
-        <Button
-            android:id="@+id/btnPrevue"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnDebut"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Prévisualiser"
             android:textSize="10dp"
             android:layout_marginVertical="2dp"
             android:layout_marginHorizontal="5dp"
-            android:drawableLeft="@android:drawable/ic_media_play"
+            android:drawableTop="@android:drawable/ic_media_play"
             android:drawablePadding="3dp"
-            android:backgroundTint="@color/red"/>
+            android:backgroundTint="@color/red" />
 
     </LinearLayout>
 

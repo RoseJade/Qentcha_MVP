@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnAjoutPoint" type="id" />
+    <item name="btnAjoutTexte" type="id" />
+    <item name="btnAjoutImage" type="id" />
+    <item name="btnPrevue" type="id" />
+</resources>
