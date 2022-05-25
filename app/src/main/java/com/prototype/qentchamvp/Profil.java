@@ -4,19 +4,30 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class Profil extends AppCompatActivity {
     ImageView img;
-    Button btnPhoto;
+    ImageButton btnPhoto;
+
+    SharedPreferences spParametres;
+    SharedPreferences.Editor parametresEditor;
+
+    EditText etNom, etAdr, etBio;
+    TextView tvNom;
 
     // constante
     int SELECT_PICTURE = 200;
@@ -27,7 +38,18 @@ public class Profil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
 
-        // Vues
+        // Informations générales
+        this.spParametres     = getSharedPreferences("parametres", MODE_PRIVATE);
+        this.parametresEditor = this.spParametres.edit();
+
+        this.etNom = (EditText) (findViewById(R.id.editNom));
+        this.etAdr = (EditText) (findViewById(R.id.editAdr));
+        this.etBio = (EditText) (findViewById(R.id.editBio));
+        this.tvNom = (TextView) (findViewById(R.id.tvNom));
+
+
+
+        //Vues
         img = findViewById(R.id.photo);
         btnPhoto = findViewById(R.id.btnSelectPhoto);
 
@@ -38,7 +60,7 @@ public class Profil extends AppCompatActivity {
                 choisirImage();
             }
         });
-        
+
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
@@ -104,6 +126,22 @@ public class Profil extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void sauvegarder(View view) {
+        String nom = this.etNom.getText().toString();
+        String adr = this.etAdr.getText().toString();
+        String bio = this.etBio.getText().toString();
+
+        tvNom.setText(nom);
+
+        this.parametresEditor.clear();
+
+        this.parametresEditor.putString("nom", nom);
+        this.parametresEditor.putString("adresse", adr);
+        this.parametresEditor.putString("bio", bio);
+
+        this.parametresEditor.commit();
     }
 
 }
