@@ -8,7 +8,9 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 
 // Google Maps
@@ -25,6 +27,7 @@ import com.google.android.gms.maps.GoogleMap.OnMyLocationClickListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 
 // Services de localisation
@@ -85,8 +88,7 @@ public class AjoutCarnet extends AppCompatActivity
         // ===> Ecouteurs pour les boutons <===
 
         findViewById(R.id.btnVueGlobe).setOnClickListener(this);
-        findViewById(R.id.btnAjoutPoint).setOnClickListener(this);
-        findViewById(R.id.btnPrevue).setOnClickListener(this);
+        findViewById(R.id.btnDebut)   .setOnClickListener(this);
 
         // Set carte selected
         bottomNavigationView.setSelectedItemId(R.id.action_ajoutcarnet);
@@ -128,6 +130,41 @@ public class AjoutCarnet extends AppCompatActivity
             this.map.animateCamera(CameraUpdateFactory.zoomTo(1));
         }
 
+        if (view.getId() == R.id.btnDebut){
+            Button bouPoint = new Button(this);
+            Button bouTexte = new Button(this);
+            Button bouImage = new Button(this);
+            Button bouPre   = new Button(this);
+
+            Button bouStart = (Button) findViewById(R.id.btnDebut);
+
+
+            bouPoint.setText("Point");
+            bouTexte.setText("Texte");
+            bouImage.setText("Image");
+            bouPre  .setText("Prévisualiser");
+
+            bouPoint.setId(R.id.btnAjoutPoint);
+            bouTexte.setId(R.id.btnAjoutTexte);
+            bouImage.setId(R.id.btnAjoutImage);
+            bouPre  .setId(R.id.btnPrevue);
+
+            LinearLayout bar = (LinearLayout) findViewById(R.id.barreAction);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+            bar.removeView(bouStart);
+            bar.addView(bouPoint, lp);
+            bar.addView(bouTexte, lp);
+            bar.addView(bouImage, lp);
+            bar.addView(bouPre  , lp);
+
+            findViewById(R.id.btnAjoutPoint).setOnClickListener(this);
+            findViewById(R.id.btnAjoutTexte).setOnClickListener(this);
+            findViewById(R.id.btnAjoutImage).setOnClickListener(this);
+            findViewById(R.id.btnPrevue).setOnClickListener(this);
+
+        }
+
         if (view.getId() == R.id.btnAjoutPoint) {
             // Verification de l'autorisation de récupérer la localisation
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -142,6 +179,44 @@ public class AjoutCarnet extends AppCompatActivity
             }
 
             this.addPointOnLocation();
+
+            //Intent intent = new Intent(this, AjoutPoint.class);
+            //startActivity(intent);
+        }
+
+        if (view.getId() == R.id.btnAjoutTexte) {
+            // Verification de l'autorisation de récupérer la localisation
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+
+            this.addTextOnLocation();
+
+            //Intent intent = new Intent(this, AjoutPoint.class);
+            //startActivity(intent);
+        }
+
+        if (view.getId() == R.id.btnAjoutImage) {
+            // Verification de l'autorisation de récupérer la localisation
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+
+            this.addImageOnLocation();
 
             //Intent intent = new Intent(this, AjoutPoint.class);
             //startActivity(intent);
@@ -210,6 +285,68 @@ public class AjoutCarnet extends AppCompatActivity
 
                     LatLng point = new LatLng(location.getLatitude(), location.getLongitude());
                     map.addMarker(new MarkerOptions().position(point).title("Position"));
+
+
+                }
+            }
+        });
+    }
+
+    private void addTextOnLocation() {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        this.fusedLocationClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+            @Override
+            public void onComplete(@NonNull Task<Location> task) {
+                Location location = task.getResult();
+                if (location != null) {
+
+                    LatLng point = new LatLng(location.getLatitude(), location.getLongitude());
+                    map.addMarker(
+                            new MarkerOptions()
+                                    .position(point)
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_texte))
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+
+
+                }
+            }
+        });
+    }
+
+    private void addImageOnLocation() {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        this.fusedLocationClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+            @Override
+            public void onComplete(@NonNull Task<Location> task) {
+                Location location = task.getResult();
+                if (location != null) {
+
+                    LatLng point = new LatLng(location.getLatitude(), location.getLongitude());
+                    map.addMarker(
+                            new MarkerOptions()
+                                    .position(point)
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_image))
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+
 
 
                 }
