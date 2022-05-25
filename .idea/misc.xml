@@ -19,8 +19,11 @@
         <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/layout/activity_preview_trajet.xml" value="0.22" />
         <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/layout/activity_profil.xml" value="0.33" />
         <entry key="..\:/Users/jadel/AndroidStudioProjects/QentchaMVP/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.122" />
         <entry key="app/src/main/res/drawable-anydpi/ic_carte.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable-anydpi/ic_moncarnet.xml" value="0.1565" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_profil.xml" value="0.122" />
+        <entry key="app/src/main/res/drawable/tag_colors.xml" value="0.122" />
         <entry key="app/src/main/res/layout/activity_ajout_carnet.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_carte_carnet.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2246376811594203" />
