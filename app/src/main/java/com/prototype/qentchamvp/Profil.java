@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -128,20 +129,48 @@ public class Profil extends AppCompatActivity {
         }
     }
 
+    // Vérification de la saisie de l'utilisateur
+    boolean validateInput() {
+        if (etNom.getText().toString().equals("")) {
+            etNom.setError("Entrez votre nom");
+            return false;
+        }
+
+        if (etAdr.getText().toString().equals("")) {
+            etAdr.setError("Entrez votre adresse courriel");
+            return false;
+        }
+
+        // Format de l'email
+        if (!isEmailValid(etAdr.getText().toString())) {
+            etAdr.setError("Entrez une adresse courriel valide");
+            return false;
+        }
+
+        return true;
+    }
+
+    // email valide
+    boolean isEmailValid(String email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
     public void sauvegarder(View view) {
-        String nom = this.etNom.getText().toString();
-        String adr = this.etAdr.getText().toString();
-        String bio = this.etBio.getText().toString();
+        if( validateInput() )
+        {
+            String nom = this.etNom.getText().toString();
+            String adr = this.etAdr.getText().toString();
+            String bio = this.etBio.getText().toString();
 
-        tvNom.setText(nom);
+            tvNom.setText(nom);
 
-        this.parametresEditor.clear();
+            this.parametresEditor.putString("nom", nom);
+            this.parametresEditor.putString("adresse", adr);
+            this.parametresEditor.putString("bio", bio);
 
-        this.parametresEditor.putString("nom", nom);
-        this.parametresEditor.putString("adresse", adr);
-        this.parametresEditor.putString("bio", bio);
+            this.parametresEditor.commit();
+        }
 
-        this.parametresEditor.commit();
     }
 
 }
