@@ -6,6 +6,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         tools:context=".Profil">
 
     <LinearLayout
@@ -50,29 +51,6 @@
 
                 </FrameLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@android:drawable/ic_menu_edit" />
-
-                    <TextView
-                        android:id="@+id/txtV_modifier_profil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:text="Modifier le profil"
-                        android:textColor="#fff"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-
 
             </LinearLayout>
 
@@ -89,8 +67,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/bottom_navigation_view" >
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -203,9 +180,9 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="40dp"
-                    android:layout_height="wrap_content"
                     android:elevation="15dp"
                     android:orientation="vertical">
 
@@ -216,11 +193,11 @@
                         android:background="@drawable/profile_colors"
                         android:gravity="center"
                         android:hint="Sauvegarder"
+                        android:onClick="sauvegarder"
                         android:padding="8dp"
                         android:textColorHint="#fff"
                         android:textSize="16sp"
-                        app:backgroundTint="@null"
-                        android:onClick="sauvegarder" />
+                        app:backgroundTint="@null" />
 
                 </LinearLayout>
 
@@ -365,6 +342,29 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:elevation="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_abo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/profile_colors"
+                        android:gravity="center"
+                        android:hint="Gérer l'abonnement"
+                        android:onClick="abonnement"
+                        android:padding="8dp"
+                        android:textColorHint="#fff"
+                        android:textSize="16sp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
 
@@ -372,7 +372,6 @@
 
 
     </LinearLayout>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"

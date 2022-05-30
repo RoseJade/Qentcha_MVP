@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
-import android.net.Uri;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,9 +21,14 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 public class Profil extends AppCompatActivity {
     ImageView img;
     ImageButton btnPhoto;
+    Button btnAbo;
 
     SharedPreferences spParametres;
     SharedPreferences.Editor parametresEditor;
@@ -48,13 +54,29 @@ public class Profil extends AppCompatActivity {
         this.etBio = (EditText) (findViewById(R.id.editBio));
         this.tvNom = (TextView) (findViewById(R.id.tvNom));
 
+        // Récupération des informations sauvegardées
+        this.etNom.setText( this.spParametres.getString("nom", "" ) );
+        this.tvNom.setText( this.spParametres.getString("nom", "" ) );
+        this.etAdr.setText( this.spParametres.getString("adresse", "" ) );
+        this.etBio.setText( this.spParametres.getString("bio", "" ) );
 
 
-        //Vues
+        //Vues pour l'image, bouton photo et bouton Abonnement
         img = findViewById(R.id.photo);
         btnPhoto = findViewById(R.id.btnSelectPhoto);
 
-        // Bouton du choix de l'image
+        btnAbo = (Button) findViewById(R.id.btn_abo);
+
+        // Récupère l'image
+        String encodedImg = this.spParametres.getString("image", "");
+        if ( !encodedImg.equals("")  )
+        {
+            byte[] b = Base64.decode(encodedImg, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
+            img.setImageBitmap(bitmap);
+        }
+
+        // Bouton pour choisir l'image
         btnPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,12 +141,7 @@ public class Profil extends AppCompatActivity {
 
             // Comparaison
             if (requestCode == SELECT_PICTURE) {
-                // On prend l'url de l'image
-                Uri imgUri = data.getData();
-                if (null != imgUri) {
-                    // on met à jour l'ancienne image dans le layout
-                    img.setImageURI(imgUri);
-                }
+                this.imageSauvegarde(data);
             }
         }
     }
@@ -171,6 +188,35 @@ public class Profil extends AppCompatActivity {
             this.parametresEditor.commit();
         }
 
+    }
+
+    // Méthode qui permet de récupérer les informations de l'image
+    public void imageSauvegarde( Intent data)
+    {
+        InputStream stream = null;
+        try {
+            stream = getContentResolver().openInputStream(data.getData());
+
+            Bitmap realImage = BitmapFactory.decodeStream(stream);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            realImage.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] b = baos.toByteArray();
+
+            String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
+            this.img.setImageBitmap(bitmap);
+
+            this.parametresEditor.putString("image", encodedImage);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void abonnement( View v)
+    {
+        startActivity(new Intent(this, Abonnement.class));
     }
 
 }
